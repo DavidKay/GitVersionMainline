@@ -31,6 +31,12 @@ jobs:
         uses: gittools/actions/gitversion/setup@v1.1.1
         with:
           versionSpec: '5.x'
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v1.1.1
+        with:
+          useConfigFile: true
+          configFilePath: GitVersion.yml
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
