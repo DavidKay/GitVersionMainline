@@ -1,1 +1,14 @@
 mode: Mainline
+branches:
+  feature:
+    regex: feature(s)?[/-]
+    mode: ContinuousDeployment
+    tag: useBranchName
+    increment: Minor
+  hotfix:
+    regex: (hotfix(es)?|config)[/-]
+    mode: ContinuousDeployment
+    tag: useBranchName
+    increment: Patch
+ignore:
+  sha: []
